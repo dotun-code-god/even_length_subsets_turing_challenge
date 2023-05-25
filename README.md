@@ -1,5 +1,5 @@
 ## Coding Challenge: 
-  <p>Given a set of numbers k, find all subsets of k such that each has an <strong>even</strong> number of integers, and then return the sum
+  <p>Given a set of numbers k, find all subsets of k such that each has an <strong style="text-decoration:underline">even</strong> number of integers, and then return the sum
     of all these subsets. 
   <br>
     A subset is a contiguous subsequenceof k
