@@ -16,6 +16,10 @@
  *  [2,5] = 7
  *  [1,4,2,5] = 12
  *  The sum of all subarrays = 5 + 6 + 7 + 12 = 30
+ * 
+ * Constraints: 
+ *  1 <= k.length <= 100
+ *  1 <= k[i] <= 1000
  */
 
 
@@ -24,14 +28,12 @@ function evenLength($arr){
     for($i = 0; $i < count($arr); $i++){
     	if($i + 1 < count($arr)){
         	$newArr[] = [$arr[$i], $arr[$i+1]];
-        } if(($i+1) >= 4){
-        	$newArr[] = popArray(4, $arr, $i);
-        } if(($i+1) >= 6){
-        	$newArr[] = popArray(6, $arr, $i);
-        } if(($i+1) >= 8){
-        	$newArr[] = popArray(8, $arr, $i);
+        } 
+        for($j = 4; $j <= 100; $j += 2){
+            if(($i+1) >= $j){
+                $newArr[] = popArray($j, $arr, $i);
+            }
         }
-        // you can continue to add your conditions depending on the weight of your array or do well to improve.
     }
     
     $newArr = array_map(function($val){
